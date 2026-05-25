@@ -2,7 +2,7 @@ class Indexsearch < Formula
   desc "Persistent-index rg-like search for large source trees"
   homepage "https://github.com/Abyss116/IndexSearch"
   version "0.2.8"
-  license :cannot_represent
+  license any_of: ["MIT", "Apache-2.0"]
 
   if OS.linux?
     url "https://github.com/Abyss116/IndexSearch/releases/download/v0.2.8/indexsearch-linux-x86_64.tar.gz"
