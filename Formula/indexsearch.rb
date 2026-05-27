@@ -1,18 +1,18 @@
 class Indexsearch < Formula
   desc "Persistent-index rg-like search for large source trees"
   homepage "https://github.com/Abyss116/IndexSearch"
-  version "0.3.25"
+  version "0.3.26"
   license any_of: ["MIT", "Apache-2.0"]
 
   if OS.linux?
-    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.3.25/indexsearch-linux-x86_64.tar.gz"
-    sha256 "022190c71cceb0a966d0aeb0a13e330f4c5316ab150fb7c6f7b4b25a58fe74ee"
+    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.3.26/indexsearch-linux-x86_64.tar.gz"
+    sha256 "e08575e4eadd8d241cf452d72e6d90410a87286888bcb6cd073c65b0add862c1"
   elsif Hardware::CPU.arm?
-    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.3.25/indexsearch-macos-aarch64.tar.gz"
-    sha256 "30b66a5ee3d5cda616710cd0c53d76bebe4e7edc6b097653a777d0404da04e57"
+    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.3.26/indexsearch-macos-aarch64.tar.gz"
+    sha256 "c53c8d6e14493639cd373fe1f252a768f07214f9224e3d19b94ab734bf592ec5"
   else
-    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.3.25/indexsearch-macos-x86_64.tar.gz"
-    sha256 "47d1ef2d83d57ee948bde2712760384f47ed0d76d0359c77d8625e8f04c62ad5"
+    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.3.26/indexsearch-macos-x86_64.tar.gz"
+    sha256 "406227ef2b0e1d86288ebc2b6f6482b08ab77e88bd5bd0e284c7cf02ca91a47a"
   end
 
   def install
