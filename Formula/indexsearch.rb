@@ -1,18 +1,18 @@
 class Indexsearch < Formula
   desc "Persistent-index rg-like search for large source trees"
   homepage "https://github.com/Abyss116/IndexSearch"
-  version "0.4.5"
+  version "0.4.6"
   license any_of: ["MIT", "Apache-2.0"]
 
   if OS.linux?
-    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.5/indexsearch-linux-x86_64.tar.gz"
-    sha256 "d5ec23c8bfc7d48b26a610791b404da11c5bd1a656c8279a985883a21546d56c"
+    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.6/indexsearch-linux-x86_64.tar.gz"
+    sha256 "342469563a4eec4140d21b973cf46b4909791a50b107a3385f0e2d0a6048c287"
   elsif Hardware::CPU.arm?
-    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.5/indexsearch-macos-aarch64.tar.gz"
-    sha256 "a831cb8f324a14a5c451e7f0792e8388478ebfba8ccedc1793c6c28097d3ccab"
+    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.6/indexsearch-macos-aarch64.tar.gz"
+    sha256 "633b658a76e5f00093b7eca67063609bae00502149a8e23c920039128c5d78c9"
   else
-    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.5/indexsearch-macos-x86_64.tar.gz"
-    sha256 "1a3e298bb77652be461cc337cba5fc9e90c1fb17ddb6a4e64faef5643bc68c43"
+    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.6/indexsearch-macos-x86_64.tar.gz"
+    sha256 "9cd4ef3ab95991ef404f838e9c3827cba7a80ab8b2df0861b02ff65f715b27fe"
   end
 
   def install
@@ -30,6 +30,11 @@ class Indexsearch < Formula
         bin.install "is"
       else
         bin.install_symlink "indexsearch" => "is"
+      end
+      if File.exist?("isgrep")
+        bin.install "isgrep"
+      else
+        bin.install_symlink "indexsearch" => "isgrep"
       end
       pkgshare.install "skills" if Dir.exist?("skills")
       pkgshare.install "agent-rules" if Dir.exist?("agent-rules")
