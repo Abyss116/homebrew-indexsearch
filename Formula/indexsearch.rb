@@ -1,18 +1,18 @@
 class Indexsearch < Formula
   desc "Persistent-index rg-like search for large source trees"
   homepage "https://github.com/Abyss116/IndexSearch"
-  version "0.4.10"
+  version "0.4.11"
   license any_of: ["MIT", "Apache-2.0"]
 
   if OS.linux?
-    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.10/indexsearch-linux-x86_64.tar.gz"
-    sha256 "63664476b73799378fed98e20c393be513d99057b5177e72fea2e53dddc1ee6c"
+    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.11/indexsearch-linux-x86_64.tar.gz"
+    sha256 "616035e2870f4ebf5d1fecf8ba62c6e79144a48af058b0f370afcad3b553ba87"
   elsif Hardware::CPU.arm?
-    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.10/indexsearch-macos-aarch64.tar.gz"
-    sha256 "c7c8c17d78c63c691eeb0452b77212bc8eefb5dfe7e0333213a2221e8b6ad46a"
+    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.11/indexsearch-macos-aarch64.tar.gz"
+    sha256 "3035162242c2952d07f1ab0334dead76c50d035f5c4a834733d487b5f436f04b"
   else
-    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.10/indexsearch-macos-x86_64.tar.gz"
-    sha256 "853e5128c1b20703796e1985385152ea906c60a8156975cc191cfc13fcee94a6"
+    url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.11/indexsearch-macos-x86_64.tar.gz"
+    sha256 "4e80c9edc7edeacf5ba3d166cdabc19db46a24a9dba74a6a830c222e383e2b58"
   end
 
   def install
@@ -26,16 +26,8 @@ class Indexsearch < Formula
       bin.install "is-daemon" if File.exist?("is-daemon")
       bin.install "istool"
       bin.install "indexsearch"
-      if File.exist?("is")
-        bin.install "is"
-      else
-        bin.install_symlink "indexsearch" => "is"
-      end
-      if File.exist?("isgrep")
-        bin.install "isgrep"
-      else
-        bin.install_symlink "indexsearch" => "isgrep"
-      end
+      bin.install_symlink "indexsearch" => "is"
+      bin.install_symlink "indexsearch" => "isgrep"
       pkgshare.install "skills" if Dir.exist?("skills")
       pkgshare.install "agent-rules" if Dir.exist?("agent-rules")
       pkgshare.install "templates" if Dir.exist?("templates")
