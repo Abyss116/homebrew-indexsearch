@@ -6,13 +6,13 @@ class Indexsearch < Formula
 
   if OS.linux?
     url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.12/indexsearch-linux-x86_64.tar.gz"
-    sha256 "bd2f31e5028f4ddd8306618f19d66c4c8eba7edf82d7ec578ffab7a00deb316b"
+    sha256 "a55b7378503dcfd16cbeaa67a740777084457910135ce6ef20f4c6d21dbedc5b"
   elsif Hardware::CPU.arm?
     url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.12/indexsearch-macos-aarch64.tar.gz"
-    sha256 "31802d1d2a03b063a8a9416e5f526c8d212e70ee057e998f912a3babbb9f1b33"
+    sha256 "a87789b6a9d6d5bd51f57d7cf5928f90be35e71675a328cc50b1f25a0a27904f"
   else
     url "https://github.com/Abyss116/IndexSearch/releases/download/v0.4.12/indexsearch-macos-x86_64.tar.gz"
-    sha256 "28d0db31f8e516a865d5048e844e664c7059a3117a102aca12aa50b14da572fb"
+    sha256 "7c0b14d31b7f977e20faeded03ba6ed2195610e8a1dab6f0d27495d9390624b6"
   end
 
   def install
